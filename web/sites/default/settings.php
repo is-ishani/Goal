@@ -90,6 +90,35 @@
  */
 $databases = [];
 
+// Enable memcache.
+$settings['memcache']['servers'] = ['127.0.0.1:11211' => 'default']; 
+$settings['memcache']['bins'] = ['default' => 'default'];
+$settings['memcache']['key_prefix'] = 'my_drupal_'; // Unique prefix for multi-site.
+
+$settings['cache']['default'] = 'cache.backend.memcache';
+
+// Use memcache for bootstrap cache.
+$settings['bootstrap_container_definition'] = [
+  'parameters' => [],
+  'services' => [
+    'cache.backend.memcache' => [
+      'class' => 'Drupal\memcache\DrupalMemcacheBackendFactory',
+      'arguments' => [
+        'servers' => ['127.0.0.1:11211' => 'default'],
+        'bins' => ['default' => 'default'],
+        'key_prefix' => 'my_drupal_',
+      ],
+    ],
+  ],
+];
+
+$settings['cache']['bins']['render'] = 'cache.backend.memcache';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.memcache';
+$settings['cache']['bins']['page'] = 'cache.backend.memcache';
+
+$settings['cache']['bins']['page'] = 'cache.backend.memcache';
+$settings['cache']['bins']['render'] = 'cache.backend.memcache';
+
 /**
  * Customizing database settings.
  *
