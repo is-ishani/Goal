@@ -1,0 +1,8 @@
+highcharts:
+  js:
+    js/custom_highcharts.js: {}
+    libraries/highcharts/highcharts.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

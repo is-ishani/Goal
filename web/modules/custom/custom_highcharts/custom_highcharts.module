@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_libraries_info().
+ */
+function custom_highcharts_libraries_info() {
+  $libraries['highcharts'] = [
+    'name' => 'Highcharts',
+    'vendor_url' => 'https://www.highcharts.com',
+    'download_url' => 'https://code.highcharts.com/highcharts.js',
+    'version' => '9.1.2',
+    'js' => [
+      'https://code.highcharts.com/highcharts.js' => [],
+    ],
+  ];
+
+  return $libraries;
+}

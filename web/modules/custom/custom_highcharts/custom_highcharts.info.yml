@@ -1,0 +1,6 @@
+name: Custom Highcharts
+description: A module to integrate Highcharts with Drupal
+package: custom
+type: module
+core_version_requirement: ^10
+

@@ -1,0 +1,7 @@
+custom_highcharts.content:
+  path: '/highcharts-example'
+  defaults:
+    _controller: '\Drupal\custom_highcharts\Controller\HighchartsController::content'
+    _title: 'Highcharts Line Chart'
+  requirements:
+    _permission: 'access content'

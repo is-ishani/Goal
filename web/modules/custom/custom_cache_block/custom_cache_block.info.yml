@@ -1,0 +1,7 @@
+name: Custom Cache Block
+description: Define a custom block
+package: custom
+type: module
+core_version_requirement: ^10
+dependencies:
+  - drupal:block
